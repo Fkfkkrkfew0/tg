@@ -742,49 +742,75 @@ client.user.setStatus("dnd")
  
  
  
-client.on('message' , message => {
-if(message.content === '$help') {
-  var EsTeKnAN = new Discord.RichEmbed()
-  .setColor('RANDOM')
-message.author.send(`
-***__وصف عن البوت__***
-**
-─════════════ {✯اوامر البوت✯} ════════════─
-❧ $bc ➺ برودكاست ب امبيد وبدون
-❧ $Link ➺ رابط انفايت للسيرفر
-❧ $clear ➺ مسح الشات
-❧ $server ➺ لعرض معلومات السيرفر
-❧ $marry ➺ لعبة الزواج
-❧ $kf ➺ لعبة كف
-❧ $mc ➺ قفل الشات
-❧ $umc ➺ فتح الشات
-❧ $hacked ➺ لعبة التهكير
-❧ $apply ➺ تقديم / لازم في روم اسمه التقديمات
-❧ $report ➺ تبليغ / لازم في روم اسمه repoerts
-❧ $avatar ➺ عرض صورتك او شخص تمنشنه
-❧ $bans ➺ يقولك عدد الاشخاص المبندين من السيرفر
-❧ $ct ➺ انشاء روم كتابي
-❧ $cv ➺ انشاء روم صوتي
-❧ $setVoice ➺ يسويلك روم ويقولك عدد الاشخاص في الرومات الصوتية
-❧ $move ➺ سحب عضو للروم الصوتي
-❧ $ban ➺ تبنيد عضو من السيرفر
-❧ $kick ➺ طرد عضو من السيرفر
-❧ $mute ➺ اعطاء ميوت كتابي
-❧ $unmute ➺ فك الميوت الكتابي
-❧ $rooms ➺ لعرض الرومات الموجودة في السيرفر
-❧ $roles ➺ لعرض الرتب الموجودة في السيرفر
-❧ $say ➺ البوت يكرر كلام انته تحدده
-❧ $id ➺ لعرض معلوماتك
-❧ $new ➺ لانشاء تذكرة
-❧ $dc ➺ لحذف كل الرتب
-❧ $image ➺ لعرض صورة السيرفر
-❧ $giveaway ➺ لعمل قيف أوي
-❧ $short ➺ لاختصار الروابط
-─════════════ {✯ By DJ DaM  ✯} ════════════─
-**
-`);
+client.on('message', message => {
+    if(message.content.startsWith(prefix+'help')) {
+   const embed = new Discord.RichEmbed()
+.setColor('RANDOM')
+        .setDescription(`**
+		
+          General's Commands. 
+${prefix}server - معلومات عن سيرفرك 
+${prefix}id - الأيدي حقك 
+${prefix}avatar - صورة بروفايلك الشخصي 
+${prefix}image - لعرض صورة السيرفر
+${prefix}bot - معلومات عن البوت
+${prefix}allbots - رؤية جميع بوتات السيرفر 
+${prefix}rooms - لرؤية رومات السيرفر 
+${prefix}new - حتى تسوي تكت
+${prefix}uptime - لتشوف البوت من متى شغال
+${prefix}tc - لعمل روم صوتي او كتابي مع الاعدادات
+${prefix}cal - لاستخدام الالة الحاسبة + للجمع - للطرح * للضرب / للقسمة
+${prefix}emojilist- يعرض لك كل الايموجيات الي بالسيرفر
+${prefix}owner - لارسال رسالة لاونر سيرفر
+${prefix}suggest - اقتراح شئ و لازم يكون فيه روم اسمه suggestions
+${prefix}report - عشان تبلغ عن شخص
+${prefix}embed - البوت يحول التقوله لامبد
+${prefix}short - لاختصار الروابط
+${prefix}roles - يعرض لك كل رولات السيرفر
+         
+        Admin's Commands.  
+${prefix}ban - لحظر شخص من السيرفر
+${prefix}unban - لفك الحظر من شخص
+${prefix}tempban - لحظر شخص لكن بوقت محدد
+${prefix}mute - حتى تعطي شخص ميوت
+${prefix}unmute - حتى تفك الميوت عن شخص
+${prefix}tempmute - حتى تعطي ميوت لشخص بوقت
+${prefix}untempmute - حتى تلغي untempmute 
+${prefix}kick - لطرد شخص من السيرفر
+${prefix}clear - لحذف كل الشات
+${prefix}clr - لحذف الشات برقم
+${prefix}bans - عدد الاشخاص المبندين
+${prefix}mutechannel - عشان تخلي ما فيه احد يقدر يكتب في الروم المحدد
+${prefix}unmutechannel - عشان ترجع الناس تقدر تكتب في الروم الي كتمته
+${prefix}bc - لعمل برودكاست بريئاكشن
+${prefix}bcrole - لعمل برودكاست لرتبة محددة
+${prefix}dc - لحذف كل الرومات
+${prefix}dr <مسح كل الرتب  - <لازم تكون رانك البوت فوق كل الرانكات
+${prefix}delete <name> - لهذف روم صوت او شات 
+${prefix}role - لعرض قائمة بجميع اوامر الرتب
+${prefix}autorole toggle  - عشان تفعل الautorole
+${prefix}autorole set - عشان تحط الرتبة الي اول ما احد يدخل ياخذها
+${prefix}giveaway - حتى تسوي قيف اوي
+${prefix}say - يقول البوت التقوله ويحذف رسالتك
+
+        Games Commands.  
+『!rps / حجر ورقة مقص』
+『!اسرع كتابة/ كتابة』
+『!لعبة الرياضيات / رياصيات』
+『!لعبة فكك / فكك』
+『!عواصم عشوائي/عواصم』
+『!xo/لعبة اكس او 』
+『!لعبة ركب / ركب』
+『!slots / لعبة الإيموجي』
+『!يعطيك عقابات قاسية / عقاب 』
+『!roll <number> / لعمل قرعة 』
+『!لعبة لغز / لغز 』
+『!لعبة خواطر / خواطر』
+『!لعبة  حب / حب』
+**`)
+    message.author.send(embed)
 }
-})
+});  
  
 
 
@@ -795,70 +821,7 @@ message.author.send(`
 
 
 
-  var filter = m => m.author.id === message.author.id;
-  if(message.content.startsWith(prefix + "giveaway")) {
-
-    if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **يجب أن يكون لديك خاصية التعديل على السيرفر**');
-    message.channel.send(`:eight_pointed_black_star:| **Send Name channel For the Giveaway**`).then(msg => {
-      message.channel.awaitMessages(filter, {
-        max: 1,
-        time: 20000,
-        errors: ['time']
-      }).then(collected => {
-        let room = message.guild.channels.find('name' , collected.first().content);
-        if(!room) return message.channel.send(':heavy_multiplication_x:| **i Found It :(**');
-        room = collected.first().content;
-        collected.first().delete();
-        msg.edit(':eight_pointed_black_star:| **Time For The Giveaway**').then(msg => {
-          message.channel.awaitMessages(filter, {
-            max: 1,
-            time: 20000,
-            errors: ['time']
-          }).then(collected => {
-            if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **The Time Be Nambers `` Do the Commend Agin``**');
-            duration = collected.first().content * 60000;
-            collected.first().delete();
-            msg.edit(':eight_pointed_black_star:| **Now send The Present **').then(msg => {
-              message.channel.awaitMessages(filter, {
-                max: 1,
-                time: 20000,
-                errors: ['time']
-              }).then(collected => {
-                title = collected.first().content;
-                collected.first().delete();
-                msg.delete();
-                message.delete();
-                try {
-                  let giveEmbed = new Discord.RichEmbed()
-                  .setDescription(`**${title}** \nReact With 🎉 To Enter! \nTime remaining : ${duration / 60000} **Minutes**\n **Created at :** ${hours}:${minutes}:${seconds} ${suffix}`)
-                  .setFooter(message.author.username, message.author.avatarURL);
-                  message.guild.channels.find("name" , room).send(' :heavy_check_mark: **Giveaway Created** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {
-                     let re = m.react('🎉');
-                     setTimeout(() => {
-                       let users = m.reactions.get("🎉").users;
-                       let list = users.array().filter(u => u.id !== m.author.id !== client.user.id);
-                       let gFilter = list[Math.floor(Math.random() * list.length) + 0]
-                       let endEmbed = new Discord.RichEmbed()
-                       .setAuthor(message.author.username, message.author.avatarURL)
-                       .setTitle(title)
-                       .addField('Giveaway Ended !🎉',`Winners : ${gFilter} \nEnded at :`)
-                       .setTimestamp()
-					 m.edit('** 🎉 GIVEAWAY ENDED 🎉**' , {embed: endEmbed});
-					message.guild.channels.find("name" , room).send(`**Congratulations ${gFilter}! You won The \`${title}\`**` , {embed: {}})
-                     },duration);
-                   });
-                } catch(e) {
-                message.channel.send(`:heavy_multiplication_x:| **i Don't Have Prem**`);
-                  console.log(e);
-                }
-              });
-            });
-          });
-        });
-      });
-    });
-  }
-});
+ 
 
 
 

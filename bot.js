@@ -784,7 +784,12 @@ message.author.send(`
  
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+    
 
+    if (message.content.indexOf('$un') === 0) {
+        var text = message.content.substring(1);
 
     
 

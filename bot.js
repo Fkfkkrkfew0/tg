@@ -785,14 +785,7 @@ message.author.send(`
 
 
 
-client.on('message', message => {
-    // اذا كان الشخص بوت ماينفذ الامر
-    if (message.author.bot) return;
-    
-    // `!`يتاكد ان الامر بدا بـ 
-    if (message.content.indexOf('$un') === 0) {
-        //  `!` ياخذ الرساله بس بدون الـ
-        var text = message.content.substring(1);
+
     
 
 

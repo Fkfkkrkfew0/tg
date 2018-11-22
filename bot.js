@@ -752,36 +752,17 @@ client.on('message', message => {
 ${prefix}server - معلومات عن سيرفرك 
 ${prefix}id - الأيدي حقك 
 ${prefix}avatar - صورة بروفايلك الشخصي 
-${prefix}image - لعرض صورة السيرفر
-${prefix}bot - معلومات عن البوت
-${prefix}allbots - رؤية جميع بوتات السيرفر 
-${prefix}rooms - لرؤية رومات السيرفر 
+${prefix}image - لعرض صورة السيرفر 
 ${prefix}new - حتى تسوي تكت
-${prefix}uptime - لتشوف البوت من متى شغال
-${prefix}tc - لعمل روم صوتي او كتابي مع الاعدادات
-${prefix}cal - لاستخدام الالة الحاسبة + للجمع - للطرح * للضرب / للقسمة
-${prefix}emojilist- يعرض لك كل الايموجيات الي بالسيرفر
-${prefix}owner - لارسال رسالة لاونر سيرفر
-${prefix}suggest - اقتراح شئ و لازم يكون فيه روم اسمه suggestions
 ${prefix}report - عشان تبلغ عن شخص
-${prefix}embed - البوت يحول التقوله لامبد
 ${prefix}short - لاختصار الروابط
-${prefix}roles - يعرض لك كل رولات السيرفر
          
         Admin's Commands.  
 ${prefix}ban - لحظر شخص من السيرفر
-${prefix}unban - لفك الحظر من شخص
-${prefix}tempban - لحظر شخص لكن بوقت محدد
 ${prefix}mute - حتى تعطي شخص ميوت
-${prefix}unmute - حتى تفك الميوت عن شخص
-${prefix}tempmute - حتى تعطي ميوت لشخص بوقت
-${prefix}untempmute - حتى تلغي untempmute 
 ${prefix}kick - لطرد شخص من السيرفر
 ${prefix}clear - لحذف كل الشات
-${prefix}clr - لحذف الشات برقم
 ${prefix}bans - عدد الاشخاص المبندين
-${prefix}mutechannel - عشان تخلي ما فيه احد يقدر يكتب في الروم المحدد
-${prefix}unmutechannel - عشان ترجع الناس تقدر تكتب في الروم الي كتمته
 ${prefix}bc - لعمل برودكاست بريئاكشن
 ${prefix}bcrole - لعمل برودكاست لرتبة محددة
 ${prefix}dc - لحذف كل الرومات
@@ -1591,7 +1572,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#8650a7")
-  .addField("Done" , " تــــم ارســالك في الخــاص")
+  .addField("Done" , " تــــم الارسال في الخــاص")
   message.channel.sendEmbed(embed);
     }
 });

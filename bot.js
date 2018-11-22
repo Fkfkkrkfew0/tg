@@ -736,7 +736,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$help | MineCraft Center`,"http://twitch.tv/MC")
+client.user.setGame(`$help | DJ DaM System`,"http://twitch.tv/MC")
 client.user.setStatus("dnd")
 });
  
@@ -776,12 +776,54 @@ message.author.send(`
 ❧ $say ➺ البوت يكرر كلام انته تحدده
 ❧ $id ➺ لعرض معلوماتك
 ❧ $new ➺ لانشاء تذكرة
-─════════════ {✯ By ♛ NovritschPro#6808 ✯} ════════════─
+─════════════ {✯ By DJ DaM  ✯} ════════════─
 **
 `);
 }
 })
  
+
+
+
+
+
+
+
+
+
+const invites = {};
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+  wait(1000);
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const logChannel = member.guild.channels.find(channel => channel.name === "♛『invites』♛");
+    logChannel.send(Invited by: <@${inviter.id}>);
+  });
+});
+
+
+
+
+
+
+
+
+
 
 
 

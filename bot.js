@@ -795,7 +795,7 @@ message.author.send(`
 
 
 
-var filter = m => m.author.id === message.author.id;
+  var filter = m => m.author.id === message.author.id;
   if(message.content.startsWith(prefix + "giveaway")) {
 
     if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **يجب أن يكون لديك خاصية التعديل على السيرفر**');
@@ -847,7 +847,18 @@ var filter = m => m.author.id === message.author.id;
 					message.guild.channels.find("name" , room).send(`**Congratulations ${gFilter}! You won The \`${title}\`**` , {embed: {}})
                      },duration);
                    });
-
+                } catch(e) {
+                message.channel.send(`:heavy_multiplication_x:| **i Don't Have Prem**`);
+                  console.log(e);
+                }
+              });
+            });
+          });
+        });
+      });
+    });
+  }
+});
 
 
 
